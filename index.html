@@ -42,24 +42,7 @@
         font-size: 14px;
         color: #666;
       }
-      @media (max-width: 600px) {
-        .ceBian {
-          display: none;
-        }
-        .neiRong {
-          flex-direction: column;
-        }
-        .shuJuQu {
-          flex-direction: column;
-        }
-        .youQu {
-          margin-left: 8px;
-        }
-        .shuJu {
-          margin: 0 0 8px;
-          flex: auto;
-        }
-      }
+
       .neiRong::-webkit-scrollbar {
         display: none;
       }
@@ -107,11 +90,28 @@
       .box::-webkit-scrollbar {
         display: none; /* Chrome Safari */
       }
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 8px;
+        }
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }}
     </style>
   </head>
   <body class="flex">
     <!-- 侧边栏 -->
-    <div style="width: 200px; z-index: 2" class="baiSe yinYing box">
+    <div style="width: 200px; z-index: 2" class="baiSe yinYing box ceBian">
       <!-- 头像栏 -->
       <div
         style="
