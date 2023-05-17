@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #4bc0c8, #c779d0, #feac5e);
+      }
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+      .flex {
+        display: flex;
+      }
+      .baiSe {
+        background-color: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(190, 190, 190);
+        font-size: 14px;
+        color: #666;
+      }
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 8px;
+        }
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+      .neiRong::-webkit-scrollbar {
+        display: none;
+      }
+      .father {
+        display: flex; /*父元素设置flex属性*/
+        justify-content: center; /*水平主轴居中*/
+        align-items: center; /*垂直交叉轴居中*/
+      }
+      .son {
+        width: 50px;
+        height: 50px;
+      }
+      #clock {
+        margin: 100px auto;
+
+        border: 5px double green;
+
+        width: 400px;
+
+        height: 100px;
+
+        line-height: 100px;
+
+        text-align: center;
+
+        font: bold;
+
+        color: red;
+      }
+      .box {
+        background-color: #fff;
+        padding: 15px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        text-align: justify;
+        color: #333;
+        line-height: 1.7;
+        letter-spacing: 0.034em;
+        font-family: "思源黑体";
+        overflow-y: scroll;
+      }
+      .box::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="baiSe yinYing box">
+      <!-- 头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          src="images/touxiang.jpg"
+          width="40px"
+          height="40px"
+          alt="哔哩哔哩"
+          style="border-radius: 50%"
+        />
+        <div style="margin-left: 10px"></div>
+      </div>
+      <div class="flex1">
+        <p>感谢康文昌</p>
+        <p>感谢元岛的大家</p>
+        <p style="text-align: right">2023年5月17日</p>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex1 flex column">
+      <!-- 头部栏 -->
+
+      <div style="height: 60px; z-index: 1" class="baiSe yinYing">
+        <h2 style="font-size: 20px; text-align: center">个人网站</h2>
+      </div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" class="flex1 flex neiRong">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex shuJuQu">
+            <!-- 数据块 -->
+            <div
+              style="height: 100px"
+              class="flex1 baiSe shuJu yinYing mgr8 father"
+            >
+              <a
+                href="https://space.bilibili.com/67498381?spm_id_from=333.337.0.0"
+                title="B站名字：1207-无所畏惧"
+              >
+                <img src="images/blbl.png" alt="哔哩哔哩" class="son"
+              /></a>
+            </div>
+            <div
+              style="height: 100px"
+              class="flex1 baiSe shuJu yinYing mgr8 father"
+            >
+              <a href="" title="QQ号：1538312239">
+                <img src="images/QQ.png" alt="QQ" class="son"
+              /></a>
+            </div>
+            <div
+              style="height: 100px"
+              class="flex1 baiSe shuJu yinYing mgr8 father"
+            >
+              <a href="" title="微信号：HONGYUEs">
+                <img src="images/wx.png" alt="微信" class="son"
+              /></a>
+            </div>
+            <div style="height: 100px" class="flex1 baiSe shuJu yinYing father">
+              <a href="https://github.com/15064020679">
+                <img src="images/github.png" alt="GitHub" class="son"
+              /></a>
+            </div>
+          </div>
+          <!-- 列表区 -->
+          <div class="flex column">
+            <!-- 描述区 -->
+            <div style="height: 160px" class="baiSe yinYing mgt8 father">
+              <img src="images/BLBL背景.png" alt="" />
+            </div>
+            <div style="height: 160px" class="baiSe yinYing mgt8 father">
+              <img src="images/QQ背景.png" alt="" />
+            </div>
+            <div style="height: 160px" class="baiSe yinYing mgt8 father">
+              <img src="images/WX背景.png" alt="" />
+            </div>
+            <div style="height: 160px" class="baiSe yinYing mgt8 father">
+              <img src="images/github背景.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mgr8 mgt8 youQu">
+          <!-- 时间区 -->
+          <div style="height: 100px" class="baiSe yinYing father">
+            <div style="text-align: center">
+              <h3><label id="time" style="color: #000000"></label></h3>
+              <script>
+                function mytime() {
+                  var a = new Date();
+
+                  var b = a.toLocaleTimeString();
+
+                  var c = a.toLocaleDateString();
+
+                  document.getElementById("time").innerHTML = c + "&nbsp" + b;
+                }
+
+                setInterval(function () {
+                  mytime();
+                }, 1000);
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
